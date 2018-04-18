@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="hive@localhost">
+  <database-model serializer="dbm" rdbms="UNKNOWN" format-version="4.8">
+    <root id="1">
+      <ServerVersion>5.7</ServerVersion>
+      <DefaultCasing>lower/lower</DefaultCasing>
+    </root>
+    <database id="2" parent="1" name="hive">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <database id="3" parent="1" name="information_schema"/>
+    <database id="4" parent="1" name="mysql"/>
+    <database id="5" parent="1" name="performance_schema"/>
+    <database id="6" parent="1" name="school"/>
+    <database id="7" parent="1" name="sys"/>
+    <database id="8" parent="1">
+      <Visible>1</Visible>
+    </database>
+    <schema id="9" parent="2">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="10" parent="8">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <table id="11" parent="9" name="availability"/>
+    <table id="12" parent="9" name="employees"/>
+    <table id="13" parent="9" name="schedule"/>
+    <column id="14" parent="11" name="eid">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="11" name="day">
+      <Position>2</Position>
+      <DataType>VARCHAR(10)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="11" name="stime">
+      <Position>3</Position>
+      <DataType>TIME(8)|92s</DataType>
+    </column>
+    <column id="17" parent="11" name="etime">
+      <Position>4</Position>
+      <DataType>TIME(8)|92s</DataType>
+    </column>
+    <key id="18" parent="11" name="PRIMARY">
+      <ColNames>eid
+day</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="19" parent="12" name="SSN">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="12" name="firstname">
+      <Position>2</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="21" parent="12" name="lastname">
+      <Position>3</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="22" parent="12" name="jid">
+      <Position>4</Position>
+      <DataType>INT(10)|4s</DataType>
+    </column>
+    <column id="23" parent="12" name="wage">
+      <Position>5</Position>
+      <DataType>INT(10)|4s</DataType>
+    </column>
+    <column id="24" parent="12" name="phone">
+      <Position>6</Position>
+      <DataType>VARCHAR(10)|12s</DataType>
+    </column>
+    <column id="25" parent="12" name="email">
+      <Position>7</Position>
+      <DataType>VARCHAR(50)|12s</DataType>
+    </column>
+    <column id="26" parent="12" name="lid">
+      <Position>8</Position>
+      <DataType>INT(10)|4s</DataType>
+    </column>
+    <key id="27" parent="12" name="PRIMARY">
+      <ColNames>SSN</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="13" name="eid">
+      <Position>1</Position>
+      <DataType>INT(10)|4s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="13" name="day">
+      <Position>2</Position>
+      <DataType>VARCHAR(10)|12s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="13" name="stime">
+      <Position>3</Position>
+      <DataType>TIME(8)|92s</DataType>
+    </column>
+    <column id="31" parent="13" name="etime">
+      <Position>4</Position>
+      <DataType>TIME(8)|92s</DataType>
+    </column>
+    <key id="32" parent="13" name="PRIMARY">
+      <ColNames>eid
+day</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
