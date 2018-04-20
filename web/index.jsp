@@ -25,7 +25,7 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <link href="css/mgrview.css" rel="stylesheet">
+    <link href="/mgrview.css" rel="stylesheet">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -78,7 +78,7 @@
                     <h3 class="text-center">
                         Current Employees
                     </h3><br>
-                    <table class="table table-hover">
+                    <table class="table" id="employees">
                         <thead>
                         <tr>
                             <th>
@@ -114,9 +114,9 @@
  %>
                         </tbody>
 </table>
-                    <button type="button" class="btn btn-success btn-lg active btn-block">
+                    <a href = "employee-form.jsp" class="btn btn-success btn-lg active btn-block" role = button>
                         Add New Employee
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -169,9 +169,9 @@
                         </tbody>
   </table>
 
-                    <button type="button" class="btn btn-success btn-lg active btn-block">
+                    <a href ="schedule-form.jsp" class="btn btn-success btn-lg active btn-block" role = button>
                         Update Schedule
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
