@@ -23,6 +23,7 @@
     day:  <input type = "text"  name = "day">
     <br> <br> <input type = "submit" value = "Update">
 </form>
+    <button type="button" name="back" onclick="history.back()">back</button>
 </body>
 </html>
 
