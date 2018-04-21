@@ -1,23 +1,7 @@
-<%-- Created by IntelliJ IDEA. --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.sql.Connection" %>
-<%@ page import="com.util.dbconnection" %>
-<%@ page import="java.sql.Statement" %>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.sql.SQLException" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: Tawana
-  Date: 4/11/2018
-  Time: 11:17 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Manager View</title>
+    <title>Manager Dashboard</title>
     <meta charset="utf-8">
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <link href="/mgrview.css" rel="stylesheet">
+    <link href="css/dashboard.css" rel="stylesheet">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -46,7 +30,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="index.jsp">Home</a></li>
+                <li class="active"><a href="mgrview.html">Dashboard</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -60,7 +45,8 @@
 
 <div class="container-fluid bg">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
 
             <div class="row" id="header">
                 <div class="jumbotron">
@@ -72,51 +58,17 @@
                     </p>
                 </div>
             </div>
+
             <!-- current employees table -->
             <div class="row" id="currentemp">
                 <div class="col-md-12">
                     <h3 class="text-center">
                         Current Employees
                     </h3><br>
-                    <table class="table" id="employees">
-                        <thead>
-                        <tr>
-                            <th>
-                                Name
-                            </th>
-                            <th>
-                                Wage
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
+                    <p class="notes">View all your current employees using this tool.</p>
 
-                <%
-     ///////////OUTPUTS a table of all the employees and their wages
-     try
-     {
-         Connection conn = dbconnection.getMySQLConnection();
-         Statement stmt;
-         if (conn != null)
-           {  stmt = conn.createStatement();
-         ResultSet rs;
-         String sql;
-         sql = "Select e.firstname,e.lastname,e.wage from employees as e";
-         rs = stmt.executeQuery(sql);
-         while(rs.next())
-         { out.println("<tr><td>" + rs.getString(1) + " " + rs.getString(2) + "</td><td>"+ rs.getInt(3) + "</td></tr>");
-         }
-         stmt.close(); }
+                    <a href="Eformhandler.jsp" class="btn btn-success btn-block btn-lg" role="button">Go</a>
 
-     }
-     catch (SQLException e) {
-         e.printStackTrace();}
- %>
-                        </tbody>
-</table>
-                    <a href = "employee-form.jsp" class="btn btn-success btn-lg active btn-block" role = button>
-                        Add New Employee
-                    </a>
                 </div>
             </div>
 
@@ -126,55 +78,14 @@
                     <h3 class="text-center">
                         Current Schedule
                     </h3><br>
-                    <table class="table table-hover">
-                        <thead>
-                        <tr>
-                            <th>
-                                Employee Name
-                            </th>
-                            <th>
-                                Day Scheduled
-                            </th>
-                            <th>
-                                Time In
-                            </th>
-                            <th>
-                                Time Out
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
+                    <p class="notes">View the current schedule using this tool.</p>
 
-    <%
-      try{
-        Connection conn = dbconnection.getMySQLConnection();
-        if(conn != null)
-        { Statement stmt = conn.createStatement();
-        ResultSet rs;
-        String sql;
-        sql = "select e.firstname, e.lastname, s.stime, s.etime, s.day from schedule as s, employees as e where e.SSN = s.eid";
-        rs = stmt.executeQuery(sql);
-        while(rs.next())
-        {
-          out.println("<tr><td>" + rs.getString(1) + " " + rs.getString(2) + "</td><td>"+ rs.getString(5) + "</td><td>"+
-                  rs.getTime(3) +"</td><td>" + rs.getTime(4)+"</td></tr>");
-
-        }
-        stmt.close();
-      }}
-      catch(SQLException s){
-        s.printStackTrace();
-      }
-    %>
-                        </tbody>
-  </table>
-
-                    <a href ="schedule-form.jsp" class="btn btn-success btn-lg active btn-block" role = button>
-                        Update Schedule
-                    </a>
+                    <a href="formhandler.jsp" class="btn btn-success btn-block btn-lg" role="button">Go</a>
                 </div>
             </div>
+
         </div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 
@@ -186,4 +97,5 @@
 
 </body>
 </html>
+
 

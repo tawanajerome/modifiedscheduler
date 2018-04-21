@@ -17,20 +17,74 @@
 <%! ArrayList<schedule> list = new ArrayList();%>
 <html>
 <head>
-    <title>Schedule</title>
+    <title>Current Schedule</title>
+    <meta charset="utf-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <link href="css/dashboard.css" rel="stylesheet">
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 
-    <br><b>Current Schedule</b>
-    <br>
-    <table border = "1" cellpadding = "5" cellspacing = "5">
-        <tr>
-            <th>Employee Name</th>
-            <th> Day Scheduled </th>
-            <th>Time In</th>
-            <th>Time out</th>
-        </tr>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Hive Scheduler</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="mgrview.html">Home</a></li>
+                <li><a href="mgrview.html">Dashboard</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <li><a href="signup.html">Signup</a></li> -->
+                <li><a href="#">Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
+<div class="container-fluid bg">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row" id="currentemp1">
+                <div class="col-md-12">
+                    <h3 class="text-center">
+                        Current Schedule
+                    </h3><br>
+                    <table class="table table-hover">
+                        <thead>
+                        <tr>
+                            <th>
+                                Employee Name
+                            </th>
+                            <th>
+                                Day Scheduled
+                            </th>
+                            <th>
+                                Time In
+                            </th>
+                            <th>
+                                Time Out
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
 <%
     try {
         Connection conn = dbconnection.getMySQLConnection();
@@ -92,8 +146,13 @@
     {s.printStackTrace();}
 
 %>
-</table>
-    <br><br><button onclick = "location.href= 'index.jsp';" > Home </button>
+                        </tbody>
+                    </table>
+                    <a href="updatesched.html" class="btn btn-success btn-block" role="button">Update Schedule</a>
+                    <a  class="btn btn-danger btn-block" role="button" onclick = "history.back()">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-</body>
-</html>

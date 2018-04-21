@@ -7,9 +7,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
-    <title>Manager View</title>
+    <title>Add Employee</title>
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +18,7 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-    <link href="/empadd.css" rel="stylesheet">
+    <link href="css/empadd.css" rel="stylesheet">
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -38,7 +39,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">Home</a></li>
+                <li><a href="#GOTOMAINHOME">Home</a></li>
+                <li><a href="index.jsp">Dashboard</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -54,52 +56,57 @@
 
     <div class="row">
 
-        <div class="col-md-12">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
 
             <div class="row" id="form">
 
                 <p><h1 id="heading">Add New Employee</h1></p>
 
-                <form method = "get" action = "Eformhandler.jsp">
+                <form action = "Eformhandler.jsp" method = "GET">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <input type="text" class="form-control" id="firstName" placeholder="First Name">
+                        <input type="text" class="form-control" name = "firstname" id="firstName" placeholder="First Name">
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="Last Name">
+                        <input type="text" class="form-control" name="lastname" id="lastName" placeholder="Last Name">
                     </div>
                     <div class="form-group">
-                        <label for="jid">JobID</label>
-                        <input type="text" class="form-control" id="jid" placeholder="JobID">
+                        <label for="jobID">JobID</label>
+                        <input type="text" class="form-control" name="jid" id="jobID" placeholder="JobID">
                     </div>
                     <div class="form-group">
                         <label for="wage">Wage</label>
-                        <input type="text" class="form-control" id="wage" placeholder="Wage">
+                        <input type="text" class="form-control" name="wage" id="wage" placeholder="Wage">
                     </div>
                     <div class="form-group">
-                        <label for="SSN">SSN</label>
-                        <input type="tel" class="form-control" id="SSN" placeholder="SSN">
+                        <label for="ssn">SSN</label>
+                        <input type="tel" class="form-control" name="SSN" id="ssn" placeholder="SSN">
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email" placeholder="Email">
+                        <input type="text" class="form-control" name="email" id="email" placeholder="Email">
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone Number</label>
-                        <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
+                        <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number">
                     </div>
                     <div class="form-group">
-                        <label for="lid">Location ID</label>
-                        <input type="text" class="form-control" id="lid" placeholder="Location ID">
+                        <label for="locID">Location ID</label>
+                        <input type="text" class="form-control" name = "lid" id="locID" placeholder="Location ID">
                     </div>
 
-                    <button type="submit" class="btn btn-success btn-block">Update</button>
+                    <button type="submit" class="btn btn-success btn-block">Submit</button>
+
+                    <a href="Eformhandler.jsp" class="btn btn-danger btn-block" role="button">Back</a>
+
                 </form>
 
             </div>
 
         </div>
+        <div class="col-md-3"></div>
 
     </div>
 
