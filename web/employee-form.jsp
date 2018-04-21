@@ -99,7 +99,7 @@
 
                     <button type="submit" class="btn btn-success btn-block">Submit</button>
 
-                    <a href="Eformhandler.jsp" class="btn btn-danger btn-block" role="button">Back</a>
+                    <a class="btn btn-danger btn-block" role="button" onclick = "history.back()">Back</a>
 
                 </form>
 

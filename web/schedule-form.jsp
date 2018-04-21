@@ -64,7 +64,7 @@
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <input type="text" class="form-control" name= "firstname" id="lastName" placeholder="Last Name">
+                        <input type="text" class="form-control" name= "lastname" id="lastName" placeholder="Last Name">
                     </div>
                     <div class="form-group">
                         <label for="startTime">Start Time</label>

@@ -46,8 +46,8 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li><a href="mgrview.html">Home</a></li>
-                <li><a href="mgrview.html">Dashboard</a></li>
+                <li><a href="index.jsp">Home</a></li>
+                <li><a href="index.jsp">Dashboard</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -114,17 +114,18 @@
             stime = request.getParameter("stime");
 
        try {
-            date = new SimpleDateFormat("hh:mm").parse(stime);      /// the request object returns strings --> must convert to
+          if(stime != null)
+          { date = new SimpleDateFormat("HH:mm").parse(stime);      /// the request object returns strings --> must convert to
             time = new Time(date.getTime());                        /// time since stime is of type time
 
             s.setStime(time);
             stime = request.getParameter("etime");
 
-            date = new SimpleDateFormat("hh:mm").parse(stime);
+            date = new SimpleDateFormat("HH:mm").parse(stime);
             time = new Time(date.getTime());
 
             s.setDay(request.getParameter("day"));
-            s.setEtime(time);
+            s.setEtime(time);}
         }
         catch(ParseException e){                      // throws an exception for the time conversion
             e.printStackTrace();
@@ -148,8 +149,8 @@
 %>
                         </tbody>
                     </table>
-                    <a href="updatesched.html" class="btn btn-success btn-block" role="button">Update Schedule</a>
-                    <a  class="btn btn-danger btn-block" role="button" onclick = "history.back()">Back</a>
+                    <a href="schedule-form.jsp" class="btn btn-success btn-block" role="button">Update Schedule</a>
+                    <a  href = "index.jsp" class="btn btn-danger btn-block" role="button" >Home</a>
                 </div>
             </div>
         </div>
