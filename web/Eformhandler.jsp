@@ -65,14 +65,14 @@
     manager man = new manager();
     try
     {
-        newemp.setSSN(Integer.parseInt(request.getParameter("SSN")));
-        newemp.setFirstname(request.getParameter("firstname"));
-        newemp.setLastname(request.getParameter("lastname"));
-        newemp.setEmail(request.getParameter("email"));
-        newemp.setJid(Integer.parseInt(request.getParameter("jid")));
-        newemp.setLid(Integer.parseInt(request.getParameter("lid")));
-        newemp.setPhone(request.getParameter("phone"));
-        newemp.setWage(Integer.parseInt(request.getParameter("wage")));
+        newemp.setssn(Integer.parseInt(request.getParameter("SSN")));
+        newemp.setfirstname(request.getParameter("firstname"));
+        newemp.setlastname(request.getParameter("lastname"));
+        newemp.setemail(request.getParameter("email"));
+        newemp.setjid(Integer.parseInt(request.getParameter("jid")));
+        newemp.setlid(Integer.parseInt(request.getParameter("lid")));
+        newemp.setphone(request.getParameter("phone"));
+        newemp.setwage(Integer.parseInt(request.getParameter("wage")));
 
         man.addEmployee(newemp);
 
@@ -83,7 +83,7 @@
 
 
 %>
-            <div class="row" id="currentemp1">
+            <div class="row" id="currentemp1" >
                 <div class="col-md-12">
                     <h3 class="text-center">
                         Current Employees

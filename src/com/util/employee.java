@@ -11,57 +11,57 @@ public class employee {
     String email;
     int lid;
 
-    public void setFirstname(String x)
+    public void setfirstname(String x)
     {this.firstname = x;}
 
-    public void setLastname(String x)
+    public void setlastname(String x)
     {this.lastname = x;}
 
-    public void setJid(int x)
+    public void setjid(int x)
     {this.jid= x;}
 
-    public void setSSN(int SSN) {
+    public void setssn(int SSN) {
         this.SSN = SSN; }
-    public void setWage(int wage)
+    public void setwage(int wage)
     {this.wage = wage;}
 
-    public void setEmail(String email) {
+    public void setemail(String email) {
         this.email = email;
     }
 
-    public void setPhone(String phone) {
+    public void setphone(String phone) {
         this.phone = phone;
     }
 
-    public void setLid(int lid) {
+    public void setlid(int lid) {
         this.lid = lid;
     }
 
-    public String getEmail() {
+    public String getemail() {
         return email;
     }
 
-    public String getFirstname() {
+    public String getfirstname() {
         return firstname;
     }
 
-    public int getSSN() {
+    public int getssn() {
         return SSN;
     }
 
-    public int getJid() {
+    public int getjid() {
         return jid;
     }
 
-    public int getLid() {
+    public int getlid() {
         return lid;
     }
-    public int getWage() {
+    public int getwage() {
         return wage;
     }
-    public String getLastname()
+    public String getlastname()
     {return lastname;}
-    public String getPhone()
+    public String getphone()
     {return phone;}
 
 }

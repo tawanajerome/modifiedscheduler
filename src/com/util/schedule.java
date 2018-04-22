@@ -8,35 +8,35 @@ public class schedule {
     Time stime;
     Time etime;
 
-    public void setDay(String day) {
+    public void setday(String day) {
         this.day = day;
     }
 
-    public void setEid(int eid) {
+    public void seteid(int eid) {
         this.eid = eid;
     }
 
-    public void setStime(Time stime) {
+    public void setstime(Time stime) {
         this.stime = stime;
     }
 
-    public void setEtime(Time etime) {
+    public void setetime(Time etime) {
         this.etime = etime;
     }
 
-    public String getDay() {
+    public String getday() {
         return day;
     }
 
-    public int getEid() {
+    public int geteid() {
         return eid;
     }
 
-    public Time getEtime() {
+    public Time getetime() {
         return etime;
     }
 
-    public Time getStime() {
+    public Time getstime() {
         return stime;
     }
 }

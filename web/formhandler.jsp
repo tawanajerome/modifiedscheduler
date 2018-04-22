@@ -109,7 +109,7 @@
 
             schedule s = new schedule();
           if(rs.next())
-                 s.setEid(rs.getInt(1));                  //once the eid is found, a schuedule object is created to pass to the
+                 s.seteid(rs.getInt(1));                  //once the eid is found, a schuedule object is created to pass to the
                                                  // update schedule function in the manager class
             stime = request.getParameter("stime");
 
@@ -118,14 +118,14 @@
           { date = new SimpleDateFormat("HH:mm").parse(stime);      /// the request object returns strings --> must convert to
             time = new Time(date.getTime());                        /// time since stime is of type time
 
-            s.setStime(time);
+            s.setstime(time);
             stime = request.getParameter("etime");
 
             date = new SimpleDateFormat("HH:mm").parse(stime);
             time = new Time(date.getTime());
 
-            s.setDay(request.getParameter("day"));
-            s.setEtime(time);}
+            s.setday(request.getParameter("day"));
+            s.setetime(time);}
         }
         catch(ParseException e){                      // throws an exception for the time conversion
             e.printStackTrace();
@@ -134,7 +134,6 @@
 
         String x;
         sql = "select e.firstname, e.lastname, s.stime, s.etime, s.day from schedule as s, employees as e where e.SSN = s.eid";
-
         rs = stmt.executeQuery(sql);
         while(rs.next())
         {
